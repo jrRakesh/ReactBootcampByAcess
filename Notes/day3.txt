@@ -1,0 +1,5 @@
+played with tailwind css premade templates
+then moved to learning Hooks
+
+instructors mail : basnetmanish089@gmail.com
+make him collaborator in the react bootcamp repo

@@ -1,15 +1,25 @@
+import {BrowserRouter,Routes,Route} from 'react-router-dom'
+import Home from './pages/Home'
+import SinglePage from './pages/SinglePage'
+import Create from './pages/Create'
+import Edit from './pages/Edit'
+import LearningUseState from './pages/LearningUseState'
 
-//Thsi is a component not a funciton
+
+//This is a component not a funciton
 function App() {
   //Js syntax are written in this section before reutrn and after curly backet
   
-  let name = "Rakesh"
-  let address = "Sunsari"
   return (
-    <div>
-   <h1> {name} </h1>
-   <h2>{address}</h2>
-   </div>
+     <BrowserRouter>
+     <Routes>
+      <Route path='/' element={<Home />}/>
+      <Route path='/singlepage' element={<SinglePage />}/>
+      <Route path='/create' element={<Create />}/>
+      <Route path='/edit' element={<Edit />}/>
+      <Route path='/learningusestate' element={<LearningUseState />}/>
+    </Routes>
+    </BrowserRouter>
   )
 }
 
