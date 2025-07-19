@@ -1,55 +1,43 @@
   function Cards({blog}){
     console.log(blog)
+
     return(
       <>
- <div>
-  <meta charSet="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Profile Card</title>
-  <div className="max-w-md w-full bg-white rounded-xl  shadow-md overflow-hidden">
-    {/* Header with background */}
-    <div className="h-24 bg-gradient-to-r from-purple-500 to-pink-500" />
-    {/* Profile content */}
-    <div className="px-6 py-4">
-      {/* Profile image centered between header and content */}
-      <div className="flex justify-center -mt-16 mb-4">
-        <img className="w-24 h-24 rounded-full border-4 border-white object-cover shadow-lg" src={blog.image} alt="Profile image" />
-      </div>
-      {/* Name and title */}
-      <div className="text-center mb-4">
-        <h2 className="text-xl font-bold text-gray-800">{blog.title}</h2>
-        <p className="text-sm text-gray-600">{blog.subtitle}</p>
-      </div>
-      {/* Bio section */}
-      <div className="mb-6">
-        <p className="text-gray-700 text-center">
-         {blog.createdAt}
-        </p>
-      </div>
-      {/* Button */}
-      <div className="flex justify-center">
-        <button className="bg-purple-500 hover:bg-purple-600 text-white font-medium py-2 px-6 rounded-full transition duration-300">
-          Contact Me
-        </button>
-      </div>
-      {/* Stats (optional) */}
-      <div className="flex justify-between mt-6 pt-6 border-t border-gray-200">
-        <div className="text-center">
-          <span className="block font-bold text-gray-800">124</span>
-          <span className="text-sm text-gray-600">Projects</span>
-        </div>
-        <div className="text-center">
-          <span className="block font-bold text-gray-800">5.2k</span>
-          <span className="text-sm text-gray-600">Followers</span>
-        </div>
-        <div className="text-center">
-          <span className="block font-bold text-gray-800">86</span>
-          <span className="text-sm text-gray-600">Following</span>
-        </div>
+ {/* Card */}
+<div className="max-w-sm mx-auto mt-8 bg-white rounded-2xl shadow-2xl overflow-hidden transform transition-all hover:scale-105 hover:shadow-3xl duration-300">
+  {/* Card Image Section */}
+  <div className="relative rounded-t-2xl overflow-hidden">
+    {/* Image with Gradient & Blur Overlay */}
+    <div className="card-image h-72 bg-cover bg-center rounded-t-2xl" style={{backgroundImage: `url(${blog.image})`}}>
+      {/* Gradient Blur Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent backdrop-blur-sm rounded-t-2xl" />
+      {/* Text Content on Image */}
+      <div className="absolute inset-0 p-6 flex flex-col justify-end z-10">
+        <h2 className="text-3xl font-bold text-white leading-tight font-serif">{blog.headline}</h2>
+        <p className="text-lg text-white opacity-80">{blog.subheadline}</p>
       </div>
     </div>
   </div>
+  {/* Card Body Section */}
+  <div className="p-6 bg-white space-y-4">
+    <h3 className="text-2xl font-semibold text-gray-800 font-serif">{blog.title}</h3>
+    <p className="text-gray-600 text-sm leading-relaxed">
+      {blog.description}
+    </p>
+    {/* CTA Button & Timestamp */}
+    <div className="flex justify-between items-center">
+      <button className="bg-green-800 text-white py-2 px-6 rounded-full text-sm font-medium shadow-md hover:bg-green-900 hover:shadow-xl transition duration-300 transform hover:-translate-y-0.5 flex items-center gap-2">
+        Learn More
+        <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+        </svg>
+      </button>
+      <span className="text-sm text-gray-500">Last updated: {blog.createdAt}</span>
+    </div>
+  </div>
 </div>
+
+
 
 </>
     )
