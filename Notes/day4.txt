@@ -1,5 +1,0 @@
-for calling api - fetch
-    -mockapi.io
-    - call back function - is a function that other goes to another fucntion as an argument
-useEffect(()=> {  },[]) --> anonymous function
-- after inspecting in network section the status code helps us to know whether our hit was succesful
