@@ -9,7 +9,7 @@ function SinglePage(){
   const [blog,setBlogs] = useState({})
 
   async function  getSingle() {
-      const response = await axios.get("https://687af357abb83744b7ee4654.mockapi.io/blogs/" +data.id)
+      const response = await axios.get("https://687af357abb83744b7ee4654.mockapi.io/blogs/" + data.id)
       
       if(response.status == 200){
         setBlogs(response.data)
@@ -19,7 +19,7 @@ function SinglePage(){
     }
     
     async function deleteBlog() {
-      const response = await axios.delete("https://687af357abb83744b7ee4654.mockapi.io/blogs/" +data.id)
+      const response = await axios.delete("https://687af357abb83744b7ee4654.mockapi.io/blogs/" + data.id)
       
       if(response.status == 200){
         alert("Blog Deleted Successfully!")
@@ -28,6 +28,10 @@ function SinglePage(){
         alert("Error Aay0!!!")
       }
 }
+
+  async function gotoEdit(){
+    navigate("/edit/blog/:{data.id}")
+  }
 
     useEffect(()=>{
         getSingle()
@@ -57,7 +61,7 @@ function SinglePage(){
     </div>
       <div className="flex justify-center space-x-4 mt-8">
         <button onClick={deleteBlog} className="bg-green-800 text-white py-2 px-5 rounded-full text-sm font-medium shadow-md hover:bg-green-900 hover:shadow-xl transition duration-300 transform hover:-translate-y-0.5">Delete Post</button>
-        <button  className="bg-green-800 text-white py-2 px-5 rounded-full text-sm font-medium shadow-md hover:bg-green-900 hover:shadow-xl transition duration-300 transform hover:-translate-y-0.5">Edit Post</button>
+        <button onClick={gotoEdit} className="bg-green-800 text-white py-2 px-5 rounded-full text-sm font-medium shadow-md hover:bg-green-900 hover:shadow-xl transition duration-300 transform hover:-translate-y-0.5">Edit Post</button>
       </div>
   </div>
 </div>

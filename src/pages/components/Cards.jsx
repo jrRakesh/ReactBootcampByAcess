@@ -29,7 +29,8 @@
     </p>
     {/* CTA Button & Timestamp */}
     <div className="flex justify-between items-center">
-      <button className="bg-green-800 text-white py-2 px-6 rounded-full text-sm font-medium shadow-md hover:bg-green-900 hover:shadow-xl transition duration-300 transform hover:-translate-y-0.5 flex items-center gap-2">
+      <button className="bg-blue-600 text-white py-2 px-6 rounded-full text-sm font-medium shadow-md hover:bg-blue-700 hover:shadow-xl transition duration-300 transform flex items-center gap-2
+">
         Learn More
         <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />

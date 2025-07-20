@@ -1,7 +1,11 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+   const navigate = useNavigate();
+
+   
 
   return (
     <nav className="bg-white shadow-md dark:bg-gray-900">
@@ -14,15 +18,15 @@ function Navbar() {
         </a>
 
         {/* Button Group */}
-        <div className="flex items-center lg:order-2">
+        <div onClick={() => {
+    navigate("/create/blog");}} className="flex items-center lg:order-2">
           <a
-            href="#"
-            className="bg-green-800 text-white py-2 px-5 rounded-full text-sm font-medium shadow-md hover:bg-green-900 hover:shadow-xl transition duration-300 transform hover:-translate-y-0.5"
+            className="bg-blue-600 text-white px-6 py-2.5 rounded-md font-semibold hover:bg-blue-700 transition"
           >
-            Get Started
+            Create New Blog
           </a>
           <button
-            onClick={() => setIsOpen(!isOpen)}
+            
             type="button"
             className="inline-flex items-center p-2 ml-2 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
             aria-controls="mobile-menu"
