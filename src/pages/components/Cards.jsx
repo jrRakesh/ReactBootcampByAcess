@@ -1,12 +1,12 @@
- import { Link } from "react-router-dom"
+ import { Link, useNavigate } from "react-router-dom"
  
  function Cards({blog}){
     console.log(blog)
-
+  const navigate = useNavigate()
     return(
 
-  <Link to = {"/single/" + blog.id}>
- {/* Card */}
+<>
+{/* Card */}
 <div className="max-w-sm mx-auto mt-8 bg-white rounded-2xl shadow-2xl overflow-hidden transform transition-all hover:scale-105 hover:shadow-3xl duration-300">
   {/* Card Image Section */}
   <div className="relative rounded-t-2xl overflow-hidden">
@@ -29,7 +29,7 @@
     </p>
     {/* CTA Button & Timestamp */}
     <div className="flex justify-between items-center">
-      <button className="bg-blue-600 text-white py-2 px-6 rounded-full text-sm font-medium shadow-md hover:bg-blue-700 hover:shadow-xl transition duration-300 transform flex items-center gap-2
+      <button onClick={() => navigate("/single/" + blog.id)} className="bg-blue-600 text-white py-2 px-6 rounded-full text-sm font-medium shadow-md hover:bg-blue-700 hover:shadow-xl transition duration-300 transform flex items-center gap-2
 ">
         Learn More
         <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
@@ -40,9 +40,9 @@
     </div>
   </div>
 </div>
-</Link>
 
 
+</>
     )
 }
 
