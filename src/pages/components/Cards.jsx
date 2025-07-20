@@ -1,8 +1,11 @@
-  function Cards({blog}){
+ import { Link } from "react-router-dom"
+ 
+ function Cards({blog}){
     console.log(blog)
 
     return(
-      <>
+
+  <Link to = {"/single/" + blog.id}>
  {/* Card */}
 <div className="max-w-sm mx-auto mt-8 bg-white rounded-2xl shadow-2xl overflow-hidden transform transition-all hover:scale-105 hover:shadow-3xl duration-300">
   {/* Card Image Section */}
@@ -36,10 +39,9 @@
     </div>
   </div>
 </div>
+</Link>
 
 
-
-</>
     )
 }
 

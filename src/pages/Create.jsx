@@ -16,10 +16,15 @@ function Create(){
         <label htmlFor="title" className="block text-gray-700 font-semibold mb-2">Title</label>
         <input type="text" id="title" name="title" required className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter blog title" />
       </div>
-      {/* Title */}
+      {/* Subitle */}
       <div className="mb-4">
         <label htmlFor="subtitle" className="block text-gray-700 font-semibold mb-2">Sub Title</label>
         <input type="text" id="subtitle" name="subtitle" required className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter blog title" />
+      </div>
+      {/* Image */}
+      <div className="mb-4">
+        <label htmlFor="image" className="block text-gray-700 font-semibold mb-2">Image</label>
+        <input type="text" id="image" name="image" required className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Image URL" />
       </div>
       {/* description */}
       <div className="mb-4">
