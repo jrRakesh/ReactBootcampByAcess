@@ -1,6 +1,35 @@
+import { useNavigate, useParams } from "react-router-dom"
 import Navbar from "./components/NavBar"
+import axios from "axios"
+import { useState } from "react"
 
 function Edit(){
+  const data = useParams()
+  const navigate = useNavigate()
+
+  const [title,setTitle] = useState("")
+  const [subtitle,setSubtitle] = useState("")
+  const [image,setImage] = useState("")
+  const [description,setDescription] = useState("")
+  
+
+  
+   async function sentDataToBackend(e){
+      e.preventDefault()
+      const response = await axios.put("https://687af357abb83744b7ee4654.mockapi.io/blogs" + data.id,{
+        // key(yo const ma vako variable) : value(yo chai api ma vako name)
+        title : title,
+        subheadline : subtitle,
+        description : description,
+        image : image
+      })
+      if(response.satuts == 200){
+        navigate("/single/"+ data.id)
+      } else {
+        alert("Error Occured")
+      }
+      
+    }
     
     return(
         <>
@@ -11,25 +40,25 @@ function Edit(){
   <title>Edit Blog Post</title>
   <section className="flex-grow container mx-auto p-6">
     <h1 className="text-3xl font-bold text-gray-800 mb-6 text-center">Edit Blog Post</h1>
-    <form action="/addBlog" method="POST" className="max-w-2xl mx-auto bg-white p-6 rounded-lg shadow-md">
+    <form onSubmit={sentDataToBackend} action="/addBlog" method="POST" className="max-w-2xl mx-auto bg-white p-6 rounded-lg shadow-md">
       {/* Title */}
       <div className="mb-4">
-        <label htmlFor="title" className="block text-gray-700 font-semibold mb-2">Title</label>
+        <label onChange={(e)=>setTitle(e.target.value)} htmlFor="title" className="block text-gray-700 font-semibold mb-2">Title</label>
         <input type="text" id="title" name="title"   className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter blog title" />
       </div>
       {/* Subitle */}
       <div className="mb-4">
-        <label htmlFor="subtitle" className="block text-gray-700 font-semibold mb-2">Sub Title</label>
+        <label onChange={(e)=>setSubtitle(e.target.value)} htmlFor="subtitle" className="block text-gray-700 font-semibold mb-2">Sub Title</label>
         <input type="text" id="subtitle" name="subtitle"   className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter blog title" />
       </div>
       {/* Image */}
       <div className="mb-4">
-        <label htmlFor="image" className="block text-gray-700 font-semibold mb-2">Image</label>
+        <label onChange={(e)=>setImage(e.target.value)} htmlFor="image" className="block text-gray-700 font-semibold mb-2">Image</label>
         <input type="text" id="image" name="image"   className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Image URL" />
       </div>
       {/* description */}
       <div className="mb-4">
-        <label htmlFor="description" className="block text-gray-700 font-semibold mb-2">Description</label>
+        <label onChange={(e)=>setDescription(e.target.value)} htmlFor="description" className="block text-gray-700 font-semibold mb-2">Description</label>
         <textarea id="description" name="description"   className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Write your blog content here" defaultValue={""} />
       </div>
       {/* Submit Button */}

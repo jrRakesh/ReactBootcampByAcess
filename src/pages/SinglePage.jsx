@@ -30,7 +30,7 @@ function SinglePage(){
 }
 
   async function gotoEdit(){
-    navigate("/edit/blog/:{data.id}")
+    navigate("/edit/blog/" + data.id)
   }
 
     useEffect(()=>{

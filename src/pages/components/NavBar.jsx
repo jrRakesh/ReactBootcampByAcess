@@ -12,7 +12,8 @@ function Navbar() {
       <div className="flex flex-wrap items-center justify-between max-w-screen-xl px-4 py-3 mx-auto">
         {/* Logo */}
         <a href="#" className="flex items-center">
-          <span className="self-center text-2xl font-serif font-bold text-green-800 dark:text-white">
+          <span onClick={() => {
+    navigate("/");}} className="self-center text-2xl font-serif font-bold text-green-800 dark:text-white">
             Don's Blogs
           </span>
         </a>
@@ -23,7 +24,7 @@ function Navbar() {
           <a
             className="bg-blue-600 text-white px-6 py-2.5 rounded-md font-semibold hover:bg-blue-700 transition"
           >
-            Create New Blog
+            Create a New Blog
           </a>
           <button
             
@@ -53,7 +54,7 @@ function Navbar() {
           id="mobile-menu"
         >
           <ul className="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0 text-gray-800 dark:text-white">
-            {['Home', 'Company', 'Marketplace', 'Features', 'Team', 'Contact'].map((item) => (
+            {['Home'].map((item) => (
               <li key={item}>
                 <a
                   href="#"
