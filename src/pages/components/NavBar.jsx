@@ -14,18 +14,18 @@ function Navbar() {
         <a href="#" className="flex items-center">
           <span onClick={() => {
     navigate("/");}} className="self-center text-2xl font-serif font-bold text-green-800 dark:text-white">
-            Don's Blogs
+            rakesh
           </span>
         </a>
 
         {/* Button Group */}
-        <div onClick={() => {
-    navigate("/create/blog");}} className="flex items-center lg:order-2">
-          <a
+        <div className="flex items-center lg:order-2">
+          <button onClick={() => {
+    navigate("/create/blog");}}
             className="bg-blue-600 text-white px-6 py-2.5 rounded-md font-semibold hover:bg-blue-700 transition"
           >
             Create a New Blog
-          </a>
+          </button>
           <button
             
             type="button"
