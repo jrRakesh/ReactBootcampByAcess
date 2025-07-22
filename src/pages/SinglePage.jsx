@@ -60,8 +60,8 @@ function SinglePage(){
       <p>{blog.description}</p>
     </div>
       <div className="flex justify-center space-x-4 mt-8">
-        <button onClick={deleteBlog} className="bg-green-800 text-white py-2 px-5 rounded-full text-sm font-medium shadow-md hover:bg-green-900 hover:shadow-xl transition duration-300 transform hover:-translate-y-0.5">Delete Post</button>
-        <button onClick={gotoEdit} className="bg-green-800 text-white py-2 px-5 rounded-full text-sm font-medium shadow-md hover:bg-green-900 hover:shadow-xl transition duration-300 transform hover:-translate-y-0.5">Edit Post</button>
+        <button onClick={deleteBlog} className="bg-blue-600 text-white px-6 py-2.5 rounded-md font-semibold hover:bg-blue-700 transition">Delete Post</button>
+        <button onClick={gotoEdit} className="bg-blue-600 text-white px-6 py-2.5 rounded-md font-semibold hover:bg-blue-700 transition">Edit Post</button>
       </div>
   </div>
 </div>
